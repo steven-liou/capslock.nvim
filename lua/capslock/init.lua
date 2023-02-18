@@ -27,6 +27,10 @@ M.enable = function(mode)
         end
         vim.cmd("redraws")
     end
+    vim.api.nvim_exec_autocmds("User", {
+        pattern = "CapsLockOn",
+        modeline = false,
+    })
 end
 
 M.disable = function(mode)
@@ -40,6 +44,10 @@ M.disable = function(mode)
         end
         vim.cmd("redraws")
     end
+    vim.api.nvim_exec_autocmds("User", {
+        pattern = "CapsLockOff",
+        modeline = false,
+    })
 end
 
 M.enabled = function(mode)
